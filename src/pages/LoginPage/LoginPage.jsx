@@ -1,5 +1,10 @@
+import ContactForm from "components/ContactForm/ContactForm"
+
 export const LoginPage = () => {
     return (
-        <h2>LoginPage</h2>
+        <main>
+            <ContactForm/>
+        </main>
     )
 }
+

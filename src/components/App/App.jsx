@@ -1,6 +1,6 @@
-import {Routes, Route } from 'react-router-dom'
+import {Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from 'components/Layout/Layout';
-import { HomePage, RegisterPage,LoginPage,ContactsPage } from 'pages';
+import { RegisterPage,LoginPage,ContactsPage } from 'pages';
 
 // import ContactForm from '../ContactForm/ContactForm';
 // import Filter from '../Filter/Filter';
@@ -11,10 +11,11 @@ export const App = () => {
     return (
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route index element={<HomePage />} />
+          {/* <Route index element={<HomePage />} /> */}
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="contacts" element={<ContactsPage />} />
+          <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>
   );

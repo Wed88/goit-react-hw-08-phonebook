@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { Header } from "./AppBar.styled";
 // import { useSelector } from 'react-redux';
 // import Navigation from './Navigation';
@@ -18,6 +19,11 @@ export const AppBar = () => {
 //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <Header >
+      <nav>
+        <NavLink to='/register' >RegisterPage</NavLink>
+        <NavLink to='/login' >LoginPage</NavLink>
+        <NavLink to='/contacts' >ContactsPage</NavLink>
+      </nav>
       {/* <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
     </Header>
