@@ -1,14 +1,20 @@
-import { AppBar } from "components/AppBar/AppBar";
+import { Navigation } from "components/Navigation/Navigation";
 import { Outlet } from "react-router-dom";
 import { GlobalStyle } from "./GlobalStyle";
-import {Container } from "./Layout.styled";
+import { Header, Nav } from "./Layout.styled";
+
 
 export const Layout = () => {
     return (
-        <Container>
-            <AppBar />
+        <>
+            <Header>
+                <Nav>
+                    <Navigation />
+                    {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */} 
+                </Nav>
+            </Header>
             <Outlet />
             <GlobalStyle />
-        </Container>
+        </>
     )
 }
