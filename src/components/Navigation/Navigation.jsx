@@ -17,10 +17,8 @@ import { Link } from "./Navigation.styled";
 export const Navigation = () => {
 //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-      <nav>
-        <Link to='/register' >RegisterPage</Link>
-        <Link to='/login' >LoginPage</Link>
-        <Link to='/contacts' >ContactsPage</Link>
-      </nav>   
+    <nav>
+      <Link to='/contacts' >ContactsPage</Link>       
+    </nav>   
   );
 }
