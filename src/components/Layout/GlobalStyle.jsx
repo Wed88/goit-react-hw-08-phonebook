@@ -1,26 +1,31 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0;
+ html {
+    scroll-behavior: smooth;
+  }
+a {
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  margin-top: 0;
-}
-
+h6,
 p {
-  margin-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
 }
 `

@@ -11,4 +11,4 @@ export const Link = styled(NavLink)`
   &:hover {
     color: blue;
   }
-`
+`;
