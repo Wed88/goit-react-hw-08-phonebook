@@ -18,7 +18,7 @@ export const Navigation = () => {
 //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <nav>
-      <Link to='/contacts' >ContactsPage</Link>       
+      <Link to='/contacts' >Контакты</Link>       
     </nav>   
   );
 }

@@ -9,11 +9,11 @@ export default function ContactForm() {
     event.preventDefault();
    
     const name = event.currentTarget.elements.name.value;
-    const phone = event.currentTarget.elements.number.value;
+    const number = event.currentTarget.elements.number.value;
     event.currentTarget.reset();
 
    try {
-     await createContact({ name, phone });
+     await createContact({ name, number });
       toast.success("New contact created!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,

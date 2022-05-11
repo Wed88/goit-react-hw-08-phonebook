@@ -10,13 +10,13 @@ const ContactList = ({filter,contacts}) => {
   <>
     {visibledContacts && (
       <ul>
-          {visibledContacts.map(({ name, id, phone }) => {
+          {visibledContacts.map(({ name, id, number }) => {
         return (
           <ContactItem
             key={id}
             id={id}
             name={name}
-            number={phone}
+            number={number}
             
           />
         );

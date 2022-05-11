@@ -1,12 +1,21 @@
-import {Routes, Route, Navigate } from 'react-router-dom'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from 'components/Layout/Layout';
-import { RegisterPage,LoginPage,ContactsPage } from 'pages';
+import { RegisterPage, LoginPage, ContactsPage } from 'pages';
+import authOperations from '../../redux/auth/auth-operations'
 
 // import ContactForm from '../ContactForm/ContactForm';
 // import Filter from '../Filter/Filter';
 // import ContactList from '../ContactList/ContactList';
 
 export const App = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
 
     return (
       <Routes>

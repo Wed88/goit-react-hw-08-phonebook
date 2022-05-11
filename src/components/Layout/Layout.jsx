@@ -10,7 +10,6 @@ import authSelectors from '../../redux/auth/auth-selectors'
 
 export const Layout = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
-    console.log(isLoggedIn)
 
     return (
         <>
