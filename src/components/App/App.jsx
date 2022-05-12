@@ -1,13 +1,20 @@
-import { useEffect } from 'react';
+import { lazy, useEffect,Suspense } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from 'components/Layout/Layout';
-import { RegisterPage, LoginPage, ContactsPage } from 'pages';
 import authOperations from '../../redux/auth/auth-operations'
+import PrivateRoute from '../PrivateRoute'
+import PublicRoute from 'components/PublicRoute';
 
-// import ContactForm from '../ContactForm/ContactForm';
-// import Filter from '../Filter/Filter';
-// import ContactList from '../ContactList/ContactList';
+const RegisterPage = lazy(() =>
+  import('pages/RegisterPage/RegisterPage').then(module => ({default: module.RegisterPage})));
+
+const LoginPage = lazy(() =>
+  import('pages/LoginPage/LoginPage').then(module => ({default: module.LoginPage})));
+
+const ContactsPage = lazy(() =>
+  import('pages/ContactsPage/ContactsPage').then(module => ({default: module.ContactsPage})));
+
 
 export const App = () => {
 
@@ -17,16 +24,19 @@ export const App = () => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-    return (
+  return (
+      <Suspense fallback=''>
       <Routes>
         <Route path="/" element={<Layout />} >
           {/* <Route index element={<HomePage />} /> */}
-          <Route path="register" element={<RegisterPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="register" element={<PublicRoute redirectTo="/contacts" restricted><RegisterPage /></PublicRoute>} />
+          {/* <Route path="login" element={<LoginPage />} /> */}
+          <Route path="login" element={<PublicRoute redirectTo="/contacts" restricted><LoginPage /></PublicRoute>} />
+          <Route path="contacts" element={<PrivateRoute redirectTo="/login"><ContactsPage /></PrivateRoute>} />
           <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>
+      </Suspense>
   );
 
   // return (
