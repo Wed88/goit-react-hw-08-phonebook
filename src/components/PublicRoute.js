@@ -6,6 +6,6 @@ export default function PublicRoute({ children, navigateTo = '/contacts', restri
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   const shouldNavigate = isLoggedIn && restricted;
-  //console.log(shouldNavigate);
+  
   return shouldNavigate ? <Navigate to={navigateTo} /> : children;
 }

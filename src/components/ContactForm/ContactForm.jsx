@@ -14,7 +14,7 @@ export default function ContactForm() {
 
    try {
      await createContact({ name, number });
-      toast.success("New contact created!", {
+      toast.success("Создан новый контакт!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
       });

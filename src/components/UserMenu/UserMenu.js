@@ -1,19 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import  authOperations  from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors'
-
-
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-
-  name: {
-    fontWeight: 700,
-    marginRight: 12,
-  },
-};
+import {Container, Name} from './UserMenu.styled'
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -21,11 +9,11 @@ export const UserMenu = () => {
   
 
   return (
-    <div style={styles.container}>
-      <span style={styles.name}>Добро пожаловать, {name}</span>
+    <Container >
+      <Name >Добро пожаловать, {name}</Name>
       <button type="button" onClick={() => dispatch(authOperations.logOut())}>
         Выйти
       </button>
-    </div>
+    </Container>
   );
 }
