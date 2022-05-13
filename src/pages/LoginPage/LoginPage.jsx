@@ -1,17 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations  from '../../redux/auth/auth-operations';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import authOperations from '../../redux/auth/auth-operations';
+import { Form, Label } from './LoginPage.styled';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -40,8 +30,8 @@ export const LoginPage = () => {
     <div>
       <h1>Страница логина</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Label >
           Почта
           <input
             type="email"
@@ -49,9 +39,9 @@ export const LoginPage = () => {
             value={email}
             onChange={handleChange}
           />
-        </label>
+        </Label>
 
-        <label style={styles.label}>
+        <Label >
           Пароль
           <input
             type="password"
@@ -59,10 +49,10 @@ export const LoginPage = () => {
             value={password}
             onChange={handleChange}
           />
-        </label>
+        </Label>
 
         <button type="submit">Войти</button>
-      </form>
+      </Form>
     </div>
   );
 }

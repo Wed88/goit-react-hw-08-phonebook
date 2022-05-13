@@ -36,36 +36,4 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-// export const store = configureStore({
-//   reducer: {
-//     [contactApi.reducerPath]: contactApi.reducer,
-//   },
-//   middleware: (getDefaultMiddleware) =>
-//     [...getDefaultMiddleware(),contactApi.middleware,],
-// })
-
 setupListeners(store.dispatch)
-
-
-
-// const contactsPersistConfig = {
-//   key: 'contacts',
-//   storage,
-//   blacklist: ['filter']
-// }
-
-// const persistedContactsReducer = persistReducer(contactsPersistConfig,items)
-
-// export const store = configureStore({
-//   reducer: {contacts: persistedContactsReducer
-//   },
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     }),
-// })
-
-// export const persistor = persistStore(store)
-
