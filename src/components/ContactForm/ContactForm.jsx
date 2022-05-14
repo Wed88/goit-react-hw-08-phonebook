@@ -28,7 +28,7 @@ export default function ContactForm() {
 
 
   return (
-    <Box component="form" onSubmit={hendleSubmit} noValidate sx={{ mt: 1 }}>
+    <Box component="form" onSubmit={hendleSubmit} sx={{ mt: 1 }}>
       <TextField
         margin="normal"
         fullWidth
@@ -38,6 +38,7 @@ export default function ContactForm() {
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
+        
       />
       <TextField
         margin="normal"
