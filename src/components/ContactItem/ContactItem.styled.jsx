@@ -12,11 +12,12 @@ export const Text = styled.p`
 `;
 
 export const Button = styled.button`
-  background: #ffffff;
+  background: rgb(131, 22, 22);
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   cursor: pointer;
   align-self: center;
   padding: 5px 25px;
   margin-left: 30px;
+  color: white;
 `;
